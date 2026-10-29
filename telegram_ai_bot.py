@@ -6,6 +6,7 @@
 """
 
 import logging
+import os
 import asyncio
 from typing import Dict, Any
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -22,7 +23,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # توكن البوت - يجب استبداله بالتوكن الحقيقي
-BOT_TOKEN = "7925535525:AAF22RBu2X6p1NFU3C6Dybe-kwcFc7v3RFw"
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
 # تخزين اختيارات المستخدمين للنماذج
 user_models: Dict[int, str] = {}
